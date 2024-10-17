@@ -1,8 +1,8 @@
 const input = document.querySelector("input");
 
-function finalResult(value) {
-    const number = value.split("").filter(num => Number.isInteger(parseInt(num))).join("");
-    return number.length > 3 ? `+(${number.substring(0, 3)}) - ${number.substring(3)}` : number;
+function finalResult() {
+    const number = input.value.split("").filter(num => Number.isInteger(parseInt(num))).join("");
+    return input.value = number.length > 3 ? `+(${number.substring(0, 3)}) - ${number.substring(3)}` : number;
 }
 
-input.addEventListener("input", () => input.value = finalResult(input.value));
+input.addEventListener("input", finalResult);
